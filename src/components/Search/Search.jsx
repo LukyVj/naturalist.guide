@@ -510,8 +510,6 @@ const Search = () => {
   const CustomHits = connectHits(Hit);
   const CustomSearchBox = connectSearchBox(SearchBox);
 
-  console.log(process.env);
-
   return (
     <Fragment>
       <style>{searchStyle}</style>
