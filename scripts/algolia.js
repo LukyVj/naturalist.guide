@@ -5,10 +5,10 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 const client = algoliasearch(
-  process.env.ALGOLIA_APP_ID,
-  process.env.ALGOLIA_API_KEY
+  process.env.REACT_APP_ALGOLIA_APP_ID_INDEX,
+  process.env.REACT_APP_ALGOLIA_API_KEY_INDEX
 );
-const index = client.initIndex(process.env.ALGOLIA_INDEX_NAME);
+const index = client.initIndex(process.env.REACT_APP_ALGOLIA_INDEX_NAME_INDEX);
 
 index.clearObjects();
 
