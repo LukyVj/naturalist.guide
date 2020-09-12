@@ -20,6 +20,7 @@ const App = () => {
       ReactGA.pageview(window.location.pathname);
     }
   }, []);
+
   return (
     <div className="App">
       <Hero />
