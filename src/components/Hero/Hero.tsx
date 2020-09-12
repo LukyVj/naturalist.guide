@@ -27,7 +27,7 @@ const Hero = () => {
       css={css`
         background: #ca0411 url(${require("../../images/heroBg.png")}) no-repeat
           center center / cover;
-        box-shadow: inset 0 0 100px black;
+        box-shadow: inset 0 0 110px black;
         background-blend-mode: darken;
       `}
     >
