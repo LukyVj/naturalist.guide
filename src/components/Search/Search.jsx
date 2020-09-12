@@ -1,5 +1,5 @@
-/* eslint-disable react/react-in-jsx-scope */
 /** @jsx jsx */
+/* eslint-disable */
 import React, { useState, Fragment, useRef, useEffect } from "react";
 import algoliasearch from "algoliasearch/lite";
 import { jsx, css } from "@emotion/core";
