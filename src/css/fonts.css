@@ -1,0 +1,31 @@
+@font-face {
+  font-family: "RDRHapna-Regular";
+  font-style: normal;
+  font-weight: 400;
+  src: local("RDRHapna-Regular"),
+    url("../fonts/RDRHapna-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "RDRCatalogueBold-Bold";
+  font-style: normal;
+  font-weight: 400;
+  src: local("RDRCatalogueBold-Bold"),
+    url("../fonts/RDRCatalogueBold-Bold.woff2") format("woff2");
+}
+
+/* for menus */
+@font-face {
+  font-family: "RDRrocks-sg";
+  font-style: normal;
+  font-weight: 400;
+  src: local("RDRrocks-sg"),
+    url("../fonts/chinese-rocks-rg.woff") format("woff");
+}
+
+@font-face {
+  font-family: "RDR-lino";
+  font-style: normal;
+  font-weight: 400;
+  src: local("RDR-lino"), url("../fonts/RDRLino-Regular.woff2") format("woff");
+}

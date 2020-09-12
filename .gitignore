@@ -1,0 +1,10 @@
+node_modules
+
+# Exists on an other repo
+index.json
+
+# misc
+.env
+
+# build
+/build
