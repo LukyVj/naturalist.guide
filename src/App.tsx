@@ -2,6 +2,8 @@
 import { jsx } from "@emotion/core";
 
 import Hero from "./components/Hero";
+import * as ReactGA from "react-ga";
+
 // import Card from "./components/Card";
 
 import "./css/fragments.css";
@@ -9,8 +11,15 @@ import "./css/App.css";
 import "./css/fonts.css";
 
 import Search from "./components/Search/Search";
+import { useEffect } from "react";
 
 const App = () => {
+  useEffect(() => {
+    if (process.env.NODE_ENV === "production") {
+      ReactGA.initialize("UA-42634383-8");
+      ReactGA.pageview(window.location.pathname);
+    }
+  }, []);
   return (
     <div className="App">
       <Hero />
