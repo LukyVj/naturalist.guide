@@ -42,21 +42,20 @@ const menu = [
 ];
 
 const linkClasses =
-  "td-none color-white fw-bold d-flex ai-center p-16 w-100p h-100p pos-relative";
+  "td-none color-white fw-bold d-flex ai-center jc-center p-16 w-100p h-100p pos-relative";
 
 const Nav = () => {
   return (
-    <nav className="pos-sticky top-0 w-100p h-80 z-max d-flex ai-center">
-      <ul className="lis-none p-0 m-0 w-100p ph-32 d-flex ai-center jc-center">
+    <nav className="md:pos-sticky top-0 w-100p h-auto z-max d-flex ai-center">
+      <ul className="lis-none p-0 m-0 w-100p ph-16 md:ph-32 d-flex fxd-row md:ai-center md:jc-center fxw-wrap md:fxw-nowrap">
         {Object.entries(menu).map((obj: any) => {
           const name = obj[1].name;
           const value = obj[1].url;
           const icon = obj[1].icon;
 
-          console.log(obj);
           return (
             <li
-              className="d-inline-block mh-8 bgc-black cursor-pointer"
+              className="d-flex ai-center mh-8 bgc-black cursor-pointer fxg-1 md:fxg-0 md:fx-6"
               css={style.item}
             >
               {value.startsWith("http") ? (
