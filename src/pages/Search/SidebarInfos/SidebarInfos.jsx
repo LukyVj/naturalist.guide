@@ -1,7 +1,7 @@
 /** @jsx jsx */
 /* eslint-disable */
 import React, { useState, Fragment } from "react";
-import Button from "../../Button";
+import Button from "../../../components/Button";
 
 import { css, jsx } from "@emotion/core";
 

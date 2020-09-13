@@ -24,6 +24,10 @@ p {
     Roboto, Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif;
 }
 
+p > a {
+  color: var(--farwest);
+}
+
 /*MISC*/
 .ts-regular {
   text-shadow: 1px 1px 0px black;

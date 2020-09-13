@@ -19,7 +19,7 @@ import {
   Configure,
 } from "react-instantsearch-dom";
 
-import Button from "../Button";
+import Button from "../../components/Button";
 import SideBarInfos from "./SidebarInfos";
 
 import { slugify } from "../../scripts/helper";

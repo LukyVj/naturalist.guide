@@ -1,25 +1,53 @@
 /** @jsx jsx */
-import SplitText from "../SplitText";
 import { css, jsx } from "@emotion/core";
+import { Link } from "react-router-dom";
 
 const style = {
   root: css``,
-  navigation: css`
-    background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+  item: css`
+    -webkit-mask-box-image: url(${require("../../images/masks/text-banner.svg")})
+      14 repeat;
+    mask-border: url(${require("../../images/masks/text-banner.svg")}) 14 repeat;
   `,
 };
 
+const menu = {
+  Home: "/",
+  Search: "/search",
+  About: "/about",
+  "MadamNazar.io": "https://madamnazar.io",
+  Discord: "https://discord.gg/RJ2YYN",
+};
+
+const linkClasses = "td-none color-white fw-bold";
+
 const Nav = () => {
   return (
-    <nav
-      className="pos-sticky top-0 w-100p h-80 z-max bxs-large ph-80 d-flex ai-center"
-      css={style.navigation}
-    >
-      <SplitText
-        copy="Red Dead Redemption 2 - Naturalist"
-        tag="h1"
-        className="fsz-32"
-      />
+    <nav className="pos-sticky top-0 w-100p h-80 z-max ph-32 d-flex ai-center">
+      <ul className="lis-none p-0 m-0 w-100p">
+        {Object.entries(menu).map((obj: any) => {
+          const key = obj[0];
+          const value = obj[1];
+          return (
+            <li className="d-inline-block p-16 bgc-black" css={style.item}>
+              {value.startsWith("http") ? (
+                <a
+                  href={value}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={linkClasses}
+                >
+                  {key}
+                </a>
+              ) : (
+                <Link to={value} className={linkClasses}>
+                  {key}
+                </Link>
+              )}
+            </li>
+          );
+        })}
+      </ul>
     </nav>
   );
 };
