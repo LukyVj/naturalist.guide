@@ -1,11 +1,7 @@
 /** @jsx jsx */
 import React from "react";
-import { css, jsx } from "@emotion/core";
+import { jsx } from "@emotion/core";
 import cx from "classnames";
-
-const style = {
-  root: css``,
-};
 
 interface SectionProps {
   className?: string;

@@ -1,9 +1,7 @@
 /** @jsx jsx */
 /* eslint-disable */
-import { Fragment } from "react";
 
-import { jsx } from "@emotion/core";
-import { SITE_NAME_MAIN_LINE } from "../../constants/misc";
+import { jsx, css } from "@emotion/core";
 
 import Section from "../../components/Section";
 import Text from "../../components/Text";
@@ -20,13 +18,18 @@ const About = () => {
   return (
     <Section>
       <header className="ta-center">
-        <h2 className="fsz-36">
+        <h2
+          className="fsz-48"
+          css={css`
+            text-shadow: 5px 0px 40px rgba(255, 255, 255, 0.6);
+          `}
+        >
           <Info className="va-middle mr-8" /> About this project
         </h2>
       </header>
       <article>
         {intro.map((paragraph, i) => (
-          <Text key={i} big={true} value={paragraph} />
+          <Text key={i} big={true} value={`- ${i + 1}. ${paragraph}`} />
         ))}
       </article>
     </Section>

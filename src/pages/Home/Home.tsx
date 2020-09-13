@@ -2,7 +2,7 @@
 /* eslint-disable */
 import { Fragment } from "react";
 
-import { jsx } from "@emotion/core";
+import { jsx, css } from "@emotion/core";
 import { SITE_NAME_MAIN_LINE } from "../../constants/misc";
 
 import Section from "../../components/Section";
@@ -19,7 +19,14 @@ const Home = () => {
   return (
     <Section>
       <header className="ta-center">
-        <h2 className="fsz-36">Welcome in the {SITE_NAME_MAIN_LINE}</h2>
+        <h2
+          className="fsz-48"
+          css={css`
+            text-shadow: 5px 0px 40px rgba(255, 255, 255, 0.6);
+          `}
+        >
+          Welcome in the {SITE_NAME_MAIN_LINE}
+        </h2>
       </header>
       <article>
         {intro.map((paragraph, i) => (
