@@ -6,6 +6,7 @@ import { jsx } from "@emotion/core";
 import { SITE_NAME_MAIN_LINE } from "../../constants/misc";
 
 import Section from "../../components/Section";
+import Text from "../../components/Text";
 
 const intro = [
   "This website is here to help you explore and discover the wild life of the world of Red dead redemption 2.",
@@ -22,11 +23,7 @@ const Home = () => {
       </header>
       <article>
         {intro.map((paragraph, i) => (
-          <p
-            className="ta-center"
-            key={i}
-            dangerouslySetInnerHTML={{ __html: paragraph }}
-          />
+          <Text className="ta-center" key={i} big value={paragraph} />
         ))}
       </article>
     </Section>
