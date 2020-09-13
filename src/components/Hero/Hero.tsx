@@ -34,6 +34,10 @@ const Hero = () => {
           center center / cover;
         box-shadow: inset 0 0 110px black;
         background-blend-mode: darken;
+        -webkit-mask-box-image: url(${require("../../images/masks/text-banner.svg")})
+          20 repeat;
+        mask-border: url(${require("../../images/masks/text-banner.svg")}) 20
+          repeat;
       `}
     >
       <header className="ta-center color-white" css={style.root}>

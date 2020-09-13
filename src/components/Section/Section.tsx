@@ -11,7 +11,9 @@ interface SectionProps {
 }
 
 const Section: React.FC<SectionProps> = (p) => {
-  return <section className="pv-32 maw-1200 m-auto">{p.children}</section>;
+  return (
+    <section className="pv-32 maw-1200 m-auto w-100p">{p.children}</section>
+  );
 };
 
 export default Section;
