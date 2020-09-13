@@ -36,7 +36,7 @@ const Button = ({
       href={href}
       className={cx(
         className,
-        "cursor-pointer bgc-black color-white hover:color-farwest pv-16 ph-16 fw-bold fsz-16 ff-lino"
+        "cursor-pointer bgc-black color-white hover:color-farwest pv-16 ph-16 fw-bold fsz-16 ff-lino ot-none"
       )}
     >
       {label}

@@ -17,6 +17,7 @@ import {
   connectToggleRefinement,
   connectRefinementList,
   Configure,
+  connectPagination,
 } from "react-instantsearch-dom";
 
 import Button from "../../components/Button";
@@ -64,8 +65,8 @@ const styles = {
   `,
   customRefinement: (item, a) =>
     css`
-      background: ${item.legendary ? " #fcb110" : "#ca0411"};
-      padding: 8px ${item.legendary};
+      background: #ca0411;
+      padding: 8px;
       -webkit-mask-box-image: url(${require("../../images/masks/text-banner.svg")})
         8 repeat;
       mask-border: url(${require("../../images/masks/text-banner.svg")}) 8
@@ -195,20 +196,20 @@ const Search = () => {
     ({ refine, items }) => (
       <div className="d-flex fxd-column fxw-wrap w-100p ts-regular jc-between">
         {legendaryData.map((item) => {
-          const a = items.find((i) => i.label === item.name);
+          const b = items.find((i) => i.label === item.name);
           return (
             <button
               type="button"
               className="pos-relative p-4 app-none bdw-0 fsz-12 color-white m-0 fx-6 cursor-pointer"
               key={item.name}
-              css={styles.customRefinement(item, a)}
+              css={styles.customRefinement(item, b)}
               onClick={(e) => {
                 e.preventDefault();
                 const refinementItem = items.find((i) => i.label === item.type);
                 refine(refinementItem.value);
               }}
             >
-              <h3 className=" color-black">{item.name}</h3>
+              <h3>{item.name}</h3>
             </button>
           );
         })}
@@ -260,6 +261,44 @@ const Search = () => {
         ref={searchBoxRef}
       />
     </div>
+  );
+
+  const Pagination = ({ currentRefinement, nbPages, refine, createURL }) => (
+    <ul className="lis-none d-flex">
+      {new Array(nbPages).fill(null).map((_, index) => {
+        const page = index + 1;
+        const style = {
+          fontWeight: currentRefinement === page ? "bold" : "",
+        };
+
+        return (
+          <li key={index} className="fxg-1">
+            <Button
+              href={createURL(page)}
+              css={css`
+                background: ${currentRefinement === page
+                  ? "white"
+                  : "var(--farwest)"};
+                color: ${currentRefinement === page
+                  ? "var(--farwest)"
+                  : "white"};
+                &:hover {
+                  color: ${currentRefinement === page
+                    ? "var(--farwest)"
+                    : "white"};
+                }
+              `}
+              className="w-100p h-100p"
+              onClick={(event) => {
+                event.preventDefault();
+                refine(page);
+              }}
+              label={page}
+            />
+          </li>
+        );
+      })}
+    </ul>
   );
 
   const Modal = ({ data }) => {
@@ -509,6 +548,7 @@ const Search = () => {
 
   const CustomHits = connectHits(Hit);
   const CustomSearchBox = connectSearchBox(SearchBox);
+  const CustomPagination = connectPagination(Pagination);
 
   return (
     <Fragment>
@@ -517,7 +557,7 @@ const Search = () => {
         indexName={process.env.REACT_APP_ALGOLIA_INDEX_NAME}
         searchClient={searchClient}
       >
-        <Configure hitsPerPage={12} />
+        <Configure hitsPerPage={8} />
         <CustomSearchBox />
         {expandImages && <Modal data={modalData} />}
         <div className="pos-relative top-0 w-100p">
@@ -525,6 +565,7 @@ const Search = () => {
             <SidebarFilters />
             <div className={cx(["p-8", sidebarOpen ? "fx-8" : "fx-12"])}>
               <Hits hitComponent={CustomHits} />
+              <CustomPagination />
             </div>
             {sidebarOpen && (
               <SideBarInfos
