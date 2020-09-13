@@ -19,7 +19,7 @@ const Home = () => {
   return (
     <Section>
       <header className="ta-center">
-        <h2>Welcome in the {SITE_NAME_MAIN_LINE}</h2>
+        <h2 className="fsz-36">Welcome in the {SITE_NAME_MAIN_LINE}</h2>
       </header>
       <article>
         {intro.map((paragraph, i) => (
