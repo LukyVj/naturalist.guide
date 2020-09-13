@@ -2,6 +2,11 @@
 /* eslint-disable */
 import React, { Fragment } from "react";
 
+import {
+  SITE_NAME_MAIN_LINE,
+  SITE_NAME_SECOND_LINE,
+} from "../../constants/misc";
+
 import { css, jsx } from "@emotion/core";
 
 const style = {
@@ -34,19 +39,27 @@ const Hero = () => {
       <header className="ta-center color-white" css={style.root}>
         <h1 className="lh-small ts-regular">
           <span className="d-inline-block p-16 w-auto" css={style.banner}>
-            Naturalist & Animal Almanac
+            {SITE_NAME_MAIN_LINE}
           </span>
           <span className="cf h-0"></span>
           <small
-            className="fsz-24 d-inline-block w-auto p-8"
+            className="fsz-24 d-inline-block w-auto p-8 lh-big"
             css={style.banner}
           >
-            for
+            <span
+              dangerouslySetInnerHTML={{
+                __html: SITE_NAME_SECOND_LINE.split(" ")
+                  .map((word, index) => {
+                    if (index === 4) {
+                      return `${word}<br/>`;
+                    } else {
+                      return word;
+                    }
+                  })
+                  .join(" "),
+              }}
+            />
           </small>
-          <br />
-          <span className="d-inline-block p-16 w-auto" css={style.banner}>
-            Red Dead Redemption 2
-          </span>
         </h1>
       </header>
     </div>
