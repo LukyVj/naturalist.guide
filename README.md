@@ -56,6 +56,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tr>
     <td align="center"><a href="https://github.com/KagutsuchiBlade"><img src="https://avatars2.githubusercontent.com/u/60373712?v=4" width="100px;" alt=""/><br /><sub><b>KagutsuchiBlade</b></sub></a><br /><a href="https://github.com/LukyVj/naturalist.guide/commits?author=KagutsuchiBlade" title="Tests">⚠️</a></td>
+    <td align="center"><a href="https://haroen.me"><img src="https://avatars3.githubusercontent.com/u/6270048?v=4" width="100px;" alt=""/><br /><sub><b>Haroen Viaene</b></sub></a><br /><a href="https://github.com/LukyVj/naturalist.guide/commits?author=Haroenv" title="Code">💻</a></td>
   </tr>
 </table>
 

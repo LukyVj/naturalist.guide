@@ -6,14 +6,20 @@
   "commit": false,
   "contributors": [
     {
-      "login": "KagutsuchiBlade",
+      "login": "Haroenv",
+      "name": "Haroen Viaene",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/6270048?v=4",
+      "profile": "https://haroen.me",
+      "contributions": [
+        "code"
+      ]
+    },
+    {"login": "KagutsuchiBlade",
       "name": "KagutsuchiBlade",
       "avatar_url": "https://avatars2.githubusercontent.com/u/60373712?v=4",
       "profile": "https://github.com/KagutsuchiBlade",
       "contributions": [
-        "test"
-      ]
-    }
+        "test"],}
   ],
   "contributorsPerLine": 7,
   "projectName": "naturalist.guide",
