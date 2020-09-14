@@ -12,6 +12,7 @@ import {
   InstantSearch,
   connectSearchBox,
   Hits,
+  // Index,
   connectHighlight,
   connectHits,
   connectToggleRefinement,
@@ -27,7 +28,7 @@ import { slugify } from "../../scripts/helper";
 
 const searchClient = algoliasearch(
   process.env.REACT_APP_ALGOLIA_APP_ID,
-  process.env.REACT_APP_ALGOLIA_API_KEY
+  process.env.REACT_APP_ALGOLIA_API_KEY_INDEXES
 );
 
 const styles = {
@@ -166,6 +167,27 @@ const Search = () => {
   const searchBoxRef = useRef(null);
   const [expandImages, setExpandImages] = useState(false);
   const [modalData, setModalData] = useState(null);
+
+  const RefinementList = ({ items, isFromSearch, refine, createURL }) => (
+    <ul>
+      {items.map((item) => (
+        <li key={item.label}>
+          <a
+            href={createURL(item.value)}
+            style={{ fontWeight: item.isRefined ? "bold" : "" }}
+            onClick={(event) => {
+              event.preventDefault();
+              refine(item.value);
+            }}
+          >
+            {item.label} ({item.count})
+          </a>
+        </li>
+      ))}
+    </ul>
+  );
+
+  const CustomRefinementList = connectRefinementList(RefinementList);
 
   const CustomRefinementListHabitat = connectRefinementList(
     ({ refine, items }) => (
@@ -363,14 +385,14 @@ const Search = () => {
               </div>
               <div className="pos-absolute bot-0 left-0 w-100 h-100 z-2">
                 <img
-                  src={`https://lukyvj.github.io/rdr2-naturalist-almanac/animals/icons/${data.thumbnailName}.png`}
+                  src={`https://lukyvj.github.io/rdr2-naturalist-almanac/${data.thumbnailName}.png`}
                   className="w-100p h-100p va-middle obf-cover obp-center"
                   alt={`icon from rockstar®  for ${data.name}`}
                   loading="lazy"
                 />
               </div>
               <img
-                src={`https://lukyvj.github.io/rdr2-naturalist-almanac/animals/photos/${data.photoName}.jpg`}
+                src={`https://lukyvj.github.io/rdr2-naturalist-almanac/${data.photoName}.jpg`}
                 className="w-100p h-100p pos-absolute top-0 left-0 z-0 obf-cover obp-center"
                 alt={`screenshot from rockstar® for ${data.name}`}
                 loading="lazy"
@@ -483,7 +505,7 @@ const Search = () => {
 
           <div className="h-120 d-grid g-5">
             <img
-              src={`https://lukyvj.github.io/rdr2-naturalist-almanac/animals/icons/${hit.thumbnailName}.png`}
+              src={`https://lukyvj.github.io/rdr2-naturalist-almanac/${hit.thumbnailName}.png`}
               className="w-90p h-90p obf-cover obp-center va-middle gcstart-1 gcend-3 as-center"
               alt={`icon from rockstar®  for ${hit.name}`}
               loading="lazy"
@@ -528,6 +550,7 @@ const Search = () => {
           top: 82px;
         `}
       >
+        <CustomRefinementList attribute="type" />
         <header>
           <h3>habitats</h3>
         </header>
