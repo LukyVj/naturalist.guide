@@ -1,30 +1,27 @@
 /** @jsx jsx */
-/* eslint-disable */
-import React, { useState, Fragment, useRef, useEffect } from "react";
+import { useState, Fragment, useRef } from "react";
 import algoliasearch from "algoliasearch/lite";
 import { jsx, css } from "@emotion/core";
 import cx from "classnames";
-
-import habitatsData from "../../data/habitats";
-import legendaryData from "../../data/legendary";
 
 import {
   InstantSearch,
   connectSearchBox,
   Hits,
-  // Index,
   connectHighlight,
   connectHits,
-  connectToggleRefinement,
   connectRefinementList,
   Configure,
   connectPagination,
 } from "react-instantsearch-dom";
 
 import Button from "../../components/Button";
+import Image from "../../components/Image";
 import SideBarInfos from "./SidebarInfos";
 
 import { slugify } from "../../scripts/helper";
+
+import * as colors from "../../constants/colors";
 
 const searchClient = algoliasearch(
   process.env.REACT_APP_ALGOLIA_APP_ID,
@@ -37,7 +34,7 @@ const styles = {
       center center / 100% 100%;
 
     &:hover:after {
-      border-color: #ca0411;
+      border-color: ${colors.FARWEST};
       border-image-repeat: round;
       border-image-slice: 10 10 10 10 fill;
       border-image-source: url(${require("../../images/hover.png")});
@@ -66,7 +63,7 @@ const styles = {
   `,
   customRefinement: (item, a) =>
     css`
-      background: #ca0411;
+      background: ${colors.FARWEST};
       padding: 8px;
       -webkit-mask-box-image: url(${require("../../images/masks/text-banner.svg")})
         8 repeat;
@@ -75,31 +72,6 @@ const styles = {
       background: ${a && a.isRefined === true && "black"};
     `,
 };
-
-const ToggleRefinement = ({
-  currentRefinement,
-  label,
-  count,
-  refine,
-  createURL,
-}) => (
-  <a
-    href={createURL(!currentRefinement)}
-    style={{ fontWeight: currentRefinement ? "bold" : "" }}
-    onClick={(event) => {
-      event.preventDefault();
-      refine(!currentRefinement);
-    }}
-    css={css`
-      color: #fcb110;
-    `}
-    className="fw-bold"
-  >
-    {label} ({currentRefinement ? count.checked : count.unchecked})
-  </a>
-);
-
-const CustomToggleRefinement = connectToggleRefinement(ToggleRefinement);
 
 // 1. Create a React component
 const Highlight = ({ highlight, attribute, hit }) => {
@@ -117,7 +89,7 @@ const Highlight = ({ highlight, attribute, hit }) => {
             <mark
               key={index}
               css={css`
-                background: #ca0411;
+                background: ${colors.FARWEST};
                 padding: 8px;
                 -webkit-mask-box-image: url(${require("../../images/masks/text-banner.svg")})
                   14 repeat;
@@ -143,7 +115,7 @@ const Highlight = ({ highlight, attribute, hit }) => {
             <mark
               key={index}
               css={css`
-                background: #ca0411;
+                background: ${colors.FARWEST};
                 color: white;
               `}
             >
@@ -169,75 +141,102 @@ const Search = () => {
   const [modalData, setModalData] = useState(null);
 
   const RefinementList = ({ items, isFromSearch, refine, createURL }) => (
-    <ul>
-      {items.map((item) => (
-        <li key={item.label}>
-          <a
-            href={createURL(item.value)}
-            style={{ fontWeight: item.isRefined ? "bold" : "" }}
-            onClick={(event) => {
-              event.preventDefault();
-              refine(item.value);
-            }}
-          >
-            {item.label} ({item.count})
-          </a>
-        </li>
-      ))}
+    <ul className="lis-none p-0 m-0">
+      {items.map((item) => {
+        const label = item.label.startsWith("animal-")
+          ? item.label.replace("animal-", "")
+          : item.label;
+        return (
+          <li key={item.label} className="d-flex pv-4">
+            <div
+              className="tick mr-8"
+              css={css`
+                width: 1.1em;
+                height: 1.1em;
+                min-width: 1.1em;
+                min-height: 1.1em;
+                border: 1px solid ${item.isRefined ? colors.FARWEST : "#fff"};
+                position: relative;
+                top: 1px;
+                background: ${item.isRefined
+                  ? `url(${require("../../images/tick.png")})no-repeat center center / 80%`
+                  : "transparent"};
+              `}
+            ></div>
+            <a
+              href={createURL(item.value)}
+              style={{ fontWeight: item.isRefined ? "bold" : "" }}
+              onClick={(event) => {
+                event.preventDefault();
+                refine(item.value);
+              }}
+              className="color-white td-none"
+              css={
+                item.isRefined &&
+                css`
+                  border-bottom: 1px solid ${colors.FARWEST};
+                `
+              }
+            >
+              {label} ({item.count})
+            </a>
+          </li>
+        );
+      })}
     </ul>
   );
 
   const CustomRefinementList = connectRefinementList(RefinementList);
 
-  const CustomRefinementListHabitat = connectRefinementList(
-    ({ refine, items }) => (
-      <div className="d-flex fxd-column fxw-wrap w-100p ts-regular jc-between">
-        {habitatsData.map((item) => {
-          const a = items.find((i) => i.label === item.name);
-          return (
-            <button
-              type="button"
-              className="pos-relative p-4 app-none bdw-0 fsz-12 color-white m-0 fx-6 cursor-pointer"
-              key={item.name}
-              css={styles.customRefinement(item, a)}
-              onClick={(e) => {
-                e.preventDefault();
-                const refinementItem = items.find((i) => i.label === item.name);
-                refine(refinementItem.value);
-              }}
-            >
-              <h3 className="ts-regular">{item.name}</h3>
-            </button>
-          );
-        })}
-      </div>
-    )
-  );
+  // const CustomRefinementListHabitat = connectRefinementList(
+  //   ({ refine, items }) => (
+  //     <div className="d-flex fxd-column fxw-wrap w-100p ts-regular jc-between">
+  //       {habitatsData.map((item) => {
+  //         const a = items.find((i) => i.label === item.name);
+  //         return (
+  //           <button
+  //             type="button"
+  //             className="pos-relative p-4 app-none bdw-0 fsz-12 color-white m-0 fx-6 cursor-pointer"
+  //             key={item.name}
+  //             css={styles.customRefinement(item, a)}
+  //             onClick={(e) => {
+  //               e.preventDefault();
+  //               const refinementItem = items.find((i) => i.label === item.name);
+  //               refine(refinementItem.value);
+  //             }}
+  //           >
+  //             <h3 className="ts-regular">{item.name}</h3>
+  //           </button>
+  //         );
+  //       })}
+  //     </div>
+  //   )
+  // );
 
-  const CustomRefinementListLegendary = connectRefinementList(
-    ({ refine, items }) => (
-      <div className="d-flex fxd-column fxw-wrap w-100p ts-regular jc-between">
-        {legendaryData.map((item) => {
-          const b = items.find((i) => i.label === item.name);
-          return (
-            <button
-              type="button"
-              className="pos-relative p-4 app-none bdw-0 fsz-12 color-white m-0 fx-6 cursor-pointer"
-              key={item.name}
-              css={styles.customRefinement(item, b)}
-              onClick={(e) => {
-                e.preventDefault();
-                const refinementItem = items.find((i) => i.label === item.type);
-                refine(refinementItem.value);
-              }}
-            >
-              <h3>{item.name}</h3>
-            </button>
-          );
-        })}
-      </div>
-    )
-  );
+  // const CustomRefinementListLegendary = connectRefinementList(
+  //   ({ refine, items }) => (
+  //     <div className="d-flex fxd-column fxw-wrap w-100p ts-regular jc-between">
+  //       {legendaryData.map((item) => {
+  //         const b = items.find((i) => i.label === item.name);
+  //         return (
+  //           <button
+  //             type="button"
+  //             className="pos-relative p-4 app-none bdw-0 fsz-12 color-white m-0 fx-6 cursor-pointer"
+  //             key={item.name}
+  //             css={styles.customRefinement(item, b)}
+  //             onClick={(e) => {
+  //               e.preventDefault();
+  //               const refinementItem = items.find((i) => i.label === item.type);
+  //               refine(refinementItem.value);
+  //             }}
+  //           >
+  //             <h3>{item.name}</h3>
+  //           </button>
+  //         );
+  //       })}
+  //     </div>
+  //   )
+  // );
 
   const searchStyle = `
   .ais-Hits-list {
@@ -289,9 +288,6 @@ const Search = () => {
     <ul className="lis-none d-flex">
       {new Array(nbPages).fill(null).map((_, index) => {
         const page = index + 1;
-        const style = {
-          fontWeight: currentRefinement === page ? "bold" : "",
-        };
 
         return (
           <li key={index} className="fxg-1">
@@ -411,13 +407,6 @@ const Search = () => {
 
           <div className="d-flex jc-start fxd-column">
             <div>
-              {/* <Button
-                label="Interactive map"
-                onClick={() => {
-                  setViewIframe(true);
-                  setFrameUrl(iframeUrl);
-                }}
-              /> */}
               <Button
                 label="Photo"
                 onClick={() => {
@@ -486,6 +475,7 @@ const Search = () => {
   };
   const Hit = ({ hit }) => {
     const mapImageRef = useRef(null);
+    const mapIconeRef = useRef(null);
     return (
       <article
         className="pos-relative top-0 h-100p d-flex fxd-column jc-between h-auto hover:color-white cursor-pointer"
@@ -498,44 +488,47 @@ const Search = () => {
         <header className="p-8 ph-16">
           <span css={styles.name} className="h-100p ts-regular">
             <CustomHighlight hit={hit} attribute="name" />
+            {hit.type} {hit.thumbnail}
           </span>
         </header>
         <div className="p-16 pt-0">
           <CustomHighlight hit={hit} attribute="description" />
 
           <div className="h-120 d-grid g-5">
-            <img
-              src={`https://lukyvj.github.io/rdr2-naturalist-almanac/${hit.thumbnailName}.png`}
+            <Image
+              src={
+                hit.type === "animal-horses"
+                  ? hit.photoName
+                  : `https://lukyvj.github.io/rdr2-naturalist-almanac/${hit.thumbnailName}.png?v=latest`
+              }
               className="w-90p h-90p obf-cover obp-center va-middle gcstart-1 gcend-3 as-center"
               alt={`icon from rockstar®  for ${hit.name}`}
-              loading="lazy"
-            />{" "}
-            <img
-              src={
-                hit.mapLocation
-                  ? `https://lukyvj.github.io/rdr2-naturalist-almanac/maps/${
-                      hit.isLegendary === true
-                        ? `legendary/${slugify(hit.name)}.png`
-                        : `${slugify(hit.mapLocation)}.png`
-                    }`
-                  : require("../../images/404.png")
-              }
-              onError={() =>
-                (mapImageRef.current.src = require("../../images/404.png"))
-              }
-              className="w-100p h-100p obf-cover obp-center gcstart-3 gcend-6"
-              alt={`Location for ${hit.name}`}
-              loading="lazy"
-              ref={mapImageRef}
-              css={css`
-                -webkit-mask-box-image: url(${require("../../images/masks/text-banner.svg")})
-                  14 repeat;
-                mask-border: url(${require("../../images/masks/text-banner.svg")})
-                  14 repeat;
-
-                filter: sepia(100);
-              `}
+              imageRef={mapIconeRef}
             />
+            {hit.type !== "animal-horses" && (
+              <Image
+                src={
+                  hit.mapLocation
+                    ? `https://lukyvj.github.io/rdr2-naturalist-almanac/maps/${
+                        hit.isLegendary === true
+                          ? `legendary/${slugify(hit.name)}.png`
+                          : `${slugify(hit.mapLocation)}.png`
+                      }`
+                    : require("../../images/404.png")
+                }
+                className="w-100p h-100p obf-cover obp-center gcstart-3 gcend-6"
+                alt={`Location for ${hit.name}`}
+                imageRef={mapImageRef}
+                css={css`
+                  -webkit-mask-box-image: url(${require("../../images/masks/text-banner.svg")})
+                    14 repeat;
+                  mask-border: url(${require("../../images/masks/text-banner.svg")})
+                    14 repeat;
+
+                  filter: sepia(100);
+                `}
+              />
+            )}
           </div>
         </div>
       </article>
@@ -550,21 +543,19 @@ const Search = () => {
           top: 82px;
         `}
       >
+        <header>
+          <h3>Filter by:</h3>
+        </header>
         <CustomRefinementList attribute="type" />
         <header>
           <h3>habitats</h3>
         </header>
-        <CustomRefinementListHabitat attribute="habitat" />
+        <CustomRefinementList attribute="habitat" />
+
         <header>
           <h3>Legendary type</h3>
         </header>
-        <CustomRefinementListLegendary attribute="legendaryType" />
-
-        <CustomToggleRefinement
-          attribute="isLegendary"
-          label="Legendary animals"
-          value={true}
-        />
+        <CustomRefinementList attribute="legendaryType" />
       </aside>
     );
   };

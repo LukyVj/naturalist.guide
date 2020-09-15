@@ -1,3 +1,8 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
 html,
 body,
 #App {
@@ -50,4 +55,19 @@ p > a {
 
 em {
   background: yellow;
+}
+
+.border-style {
+  -webkit-mask-box-image: url("../images/masks/slanted.svg") 100 repeat;
+  mask-border: url("../images/masks/slanted.svg") 100 repeat;
+  will-change: mask-border;
+}
+
+.ts-white {
+  text-shadow: 0 1px 0 black, 5px 0px 40px rgba(255, 255, 255, 0.6);
+}
+
+.first-letter::first-letter {
+  font-size: 1.8em;
+  font-family: RDR-Lino;
 }

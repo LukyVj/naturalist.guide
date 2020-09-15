@@ -6,20 +6,24 @@ import cx from "classnames";
 interface SectionProps {
   className?: string;
   big?: boolean;
-  value: string;
+  value?: any;
+  prefix?: string | JSX.Element;
   [key: string]: any;
 }
 
-const Section: React.FC<SectionProps> = ({ big, className, value }) => {
+const Section: React.FC<SectionProps> = ({ big, className, value, prefix }) => {
   return (
-    <p
-      className={cx(
-        "pv-32 maw-1200 m-auto",
-        big ? "fsz-20" : "fsz-16",
-        className && className
-      )}
-      dangerouslySetInnerHTML={{ __html: value }}
-    />
+    <span className="d-flex pv-16">
+      {prefix && <span className="fxg-0 as-start mr-8">{prefix}</span>}
+      <p
+        className={cx(
+          big ? "fsz-20" : "fsz-18",
+          className && className,
+          "ai-start p-0 m-0"
+        )}
+        dangerouslySetInnerHTML={{ __html: value }}
+      />
+    </span>
   );
 };
 
