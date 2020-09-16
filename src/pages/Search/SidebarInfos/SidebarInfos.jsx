@@ -4,6 +4,7 @@ import React, { useState, Fragment } from "react";
 import Button from "../../../components/Button";
 
 import { css, jsx } from "@emotion/core";
+import cx from "classnames";
 
 import { slugify } from "../../../scripts/helper";
 
@@ -12,6 +13,7 @@ const SideBarInfos = ({
   setExpandImages,
   setModalData,
   setSidebarOpen,
+  className,
 }) => {
   const iframeUrl = `https://jeanropke.github.io/RDOMap/?q=${
     data.isLegendary
@@ -23,7 +25,10 @@ const SideBarInfos = ({
 
   return (
     <div
-      className="fx-4 pos-sticky pv-24 ph-8 d-flex ai-center jc-center"
+      className={cx(
+        "fx-4 pos-sticky pv-24 ph-8 d-flex ai-center jc-center",
+        className
+      )}
       css={css`
         top: 82px;
         height: calc(100vh - 150px);

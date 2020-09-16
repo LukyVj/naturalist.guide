@@ -2,7 +2,7 @@ const algoliasearch = require("algoliasearch");
 
 const animalBirdsData = require("../data/animal-birds.json");
 const animalFishesData = require("../data/animal-fishes.json");
-const animalHorsesData = require("../data/animal-horses-test.json");
+const animalHorsesData = require("../data/animal-horses.json");
 const animalNaturalistData = require("../data/animal-naturalist.json");
 const animalGeneralData = require("../data/animal-general.json");
 

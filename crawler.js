@@ -145,6 +145,7 @@ const toCrawl = [
         },
       ],
       type: "animal-horses",
+      mapLocation: false,
     }),
     // Function to be called with evaluated results from browsers
     onSuccess: (result) => {
@@ -162,7 +163,7 @@ const toCrawl = [
   await crawler.close(); // Close the crawler
 
   fs.writeFile(
-    "./data/animal-horses-test.json",
+    "./data/animal-horses.json",
     JSON.stringify(finalData),
     {},
     () => {

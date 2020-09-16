@@ -26,6 +26,7 @@ const style = {
   bannerNetwork: {
     root: css`
       background: linear-gradient(to bottom, #333, black);
+      z-index: 9999;
     `,
     button: css`
       box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.8),
@@ -67,7 +68,7 @@ const BannerNetwork = () => {
   ];
   return (
     <div
-      className="h-50 w-100p d-flex ai-center pos-fixed top-0 left-0 z-5 bxs-default"
+      className="h-50 w-100p d-flex ai-center pos-fixed top-0 left-0 z-max bxs-default"
       css={style.bannerNetwork.root}
       onMouseLeave={() => {
         setShowDropDown(false);
