@@ -1,5 +1,5 @@
 {
-  "name": "Naturalis.guide",
+  "name": "Naturalist-Guide",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -17,7 +17,10 @@
     "algoliasearch": "^4.4.0",
     "babel": "^6.23.0",
     "classnames": "^2.2.6",
+    "deepmerge": "^4.2.2",
     "dotenv": "^8.2.0",
+    "fs": "^0.0.1-security",
+    "headless-chrome-crawler": "^1.8.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-feather": "^2.0.8",
@@ -33,7 +36,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "deploy": "yarn build && surge -p ./build -d https://rdr-almanac.surge.sh",
-    "index": "node scripts/algolia.js && cp index.json ../rdr2-naturalist-almanac/ && cd ../rdr2-naturalist-almanac/ && git add index.json && git commit -m\"Update index.json - `date +'%Y-%m-%d %H:%M:%S'`\" && git push && cd ../naturalist.guide/"
+    "index": "node scripts/algolia.js && yarn copy",
+    "copy": "cp -R ./data ../rdr2-naturalist-almanac/ && cd ../rdr2-naturalist-almanac/ && git add . && git commit -m\"Update data files- `date +'%Y-%m-%d %H:%M:%S'`\" && git push && cd ../naturalist.guide/"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -49,5 +53,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/react-instantsearch-dom": "^6.3.0"
   }
 }

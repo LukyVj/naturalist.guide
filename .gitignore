@@ -5,6 +5,10 @@ index.json
 
 # misc
 .env
+./data/
+./scripts/
+crawler.js
+crawler-rdr.js
 
 # build
 /build
