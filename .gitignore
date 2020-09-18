@@ -9,6 +9,10 @@ index.json
 ./scripts/
 crawler.js
 crawler-rdr.js
+**/*/.DS_Store
 
 # build
 /build
+
+# CDN
+/cdn

@@ -29,7 +29,7 @@ const Home = () => {
           <Image
             src={require("../../images/harriet-davenport.png")}
             alt="Harriet Davenport"
-            className="w-100p border-style"
+            className="w-100p"
           />
         </div>
         <div className="gcstart-2 gcend-4 ph-16 first-letter">
@@ -39,14 +39,21 @@ const Home = () => {
             ))}
             <Text big value="You can find information about:" />
             {[
-              "naturalist animals",
-              "plants",
-              "birds",
-              "fishes",
-              "horses",
-              "other animals",
-            ].map((type: string) => {
-              return <Button key={type} label={type} />;
+              { name: "naturalist animals", value: "animal-naturalist" },
+              { name: "plants", value: "plants" },
+              { name: "birds", value: "animal-birds" },
+              { name: "fishes", value: "animal-fishes" },
+              { name: "horses", value: "animal-horses" },
+              { name: "other animals", value: "animal-general" },
+            ].map((type: any) => {
+              return (
+                <Button
+                  key={type.name}
+                  label={type.name}
+                  href={`/search?t=${type.value}`}
+                  tag="a"
+                />
+              );
             })}
           </Fragment>
         </div>

@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { useState, Fragment, useRef } from "react";
+import { useState, Fragment, useRef, useEffect } from "react";
 import algoliasearch from "algoliasearch/lite";
 import { jsx, css } from "@emotion/core";
 import cx from "classnames";
@@ -19,10 +19,12 @@ import CustomSearchBox from "./CustomSearchBox";
 import CustomRefinementList from "./CustomRefinementList";
 import CustomPagination from "./CustomPagination/CustomPagination";
 
-import { slugify } from "../../scripts/helper";
+import { slugify, githubIssue, getUrlParameters } from "../../scripts/helper";
 
 import * as colors from "../../constants/colors";
 import { CDN_URL } from "../../constants/routes";
+
+const _DEDBUG = false;
 
 const searchClient = algoliasearch(
   process.env.REACT_APP_ALGOLIA_APP_ID,
@@ -63,8 +65,7 @@ const styles = {
       padding: 0;
       margin: 0;
       display: grid;
-      grid-template-columns: repeat(${sidebarOpen ? 2 : 4}, 1fr);
-      grid-template-rows: repeat(${sidebarOpen ? 6 : 4}, 1fr);
+      grid-template-columns: repeat(${sidebarOpen ? 3 : 4}, 1fr);
       grid-column-gap: 20px;
       grid-row-gap: 20px;
     }
@@ -137,6 +138,20 @@ const Search = () => {
   const searchBoxRef = useRef(null);
   const [expandImages, setExpandImages] = useState(false);
   const [modalData, setModalData] = useState(null);
+  const [query, setQuery] = useState("");
+
+  useEffect(() => {
+    if (window.location.search) {
+      let urlQuery = getUrlParameters(window.location);
+      urlQuery = query.t.includes("animals")
+        ? query.t.replace("animals", "")
+        : query.t;
+
+      setQuery(urlQuery);
+
+      console.log(query.t);
+    }
+  }, []);
 
   const Modal = ({ data }) => {
     const iframeUrl = `https://jeanropke.github.io/RDOMap/?q=${
@@ -260,7 +275,7 @@ const Search = () => {
                             ? `legendary/${slugify(data.name)}.png`
                             : `${slugify(data.mapLocation)}.png`
                         }`
-                      : require("../../images/404.png")
+                      : require("../../images/undiscovered.png")
                   }
                   className="w-100p h-100p obf-cover obp-center"
                   alt={`Location for ${data.name}`}
@@ -296,14 +311,23 @@ const Search = () => {
     const mapImageRef = useRef(null);
     const mapIconeRef = useRef(null);
 
-    const thumbnail_url = `${CDN_URL}${hit.thumbnailName}.png`;
-    const photo_url = `${CDN_URL}${hit.photoName}.png`;
-    const map_url = `${`${CDN_URL}maps/`}${
-      hit.type === "plants" ? "plants/" : "animals/"
-    }${hit.isLegendary === true ? "legendary" : ""}${hit.mapLocation.replace(
-      /-/g,
-      "_"
-    )}.${hit.type === "plants" ? "jpg" : "png"}`;
+    const itemType =
+      hit.type === "plants"
+        ? "plants"
+        : hit.type === "animal-horses"
+        ? "horses"
+        : `animals/${hit.type.replace("animal-", "")}`;
+
+    const thumbnail_url = `${CDN_URL}${itemType}/icons/${hit.thumbnailName}.png`;
+    const photo_url =
+      itemType === "horses"
+        ? hit.photoName
+        : `${CDN_URL}${itemType}/photos/${hit.photoName}.png`;
+    const map_url = `${`${CDN_URL}maps/${itemType}/`}${
+      hit.isLegendary === true ? "legendary/" : ""
+    }${hit.mapLocation.replace(/-/g, "_")}.${
+      hit.type === "plants" ? "jpg" : "png"
+    }`;
     return (
       <article
         className="pos-relative top-0 h-100p d-flex fxd-column jc-between h-auto hover:color-white cursor-pointer"
@@ -313,10 +337,41 @@ const Search = () => {
           setSidebarOpen(true);
         }}
       >
+        <a
+          href={githubIssue(hit)}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="pos-absolute top-8 right-16"
+          title={`Missing or incorrect data for ${hit.name}?`}
+        >
+          <Image
+            src={require("../../images/menu_icon_info_warning.png")}
+            alt="Open issue on github"
+            className="w-20 op-50p hover:op-100p"
+          />
+        </a>
         <header className="p-8 ph-16">
-          <span css={styles.name} className="h-100p ts-regular">
+          {_DEDBUG && (
+            <textarea
+              className="w-100p h-300"
+              value={`
+type = ${itemType}
+thumbnail_url = ${thumbnail_url}
+photo_url = ${photo_url}
+map_url = ${map_url}`}
+            />
+          )}
+          <span className="h-100p ts-regular d-flex ai-center">
+            <Image
+              src={require(`../../images/icons/satchel_${
+                itemType.includes("animals/")
+                  ? itemType.replace("animals/", "")
+                  : itemType
+              }.png`)}
+              alt="icon"
+              className="w-30 mr-8"
+            />
             <CustomHighlight hit={hit} attribute="name" />
-            {hit.type} {map_url}
           </span>
         </header>
         <div className="p-16 pt-0">
@@ -324,12 +379,12 @@ const Search = () => {
 
           <div className="h-120 d-grid g-5">
             <Image
-              src={hit.type === "animal-horses" ? photo_url : thumbnail_url}
+              src={itemType === "horses" ? photo_url : thumbnail_url}
               className="w-90p h-90p obf-cover obp-center va-middle gcstart-1 gcend-3 as-center"
               alt={`icon from rockstar®  for ${hit.name}`}
               imageRef={mapIconeRef}
             />
-            {hit.type !== "animal-horses" && (
+            {itemType !== "horses" && (
               <Image
                 src={map_url}
                 className="w-100p h-100p obf-cover obp-center gcstart-3 gcend-6"
@@ -359,19 +414,20 @@ const Search = () => {
           top: 82px;
         `}
       >
-        <header>
-          <h3>Filter by:</h3>
-        </header>
-        <CustomRefinementList attribute="type" />
-        <header>
-          <h3>habitats</h3>
-        </header>
-        <CustomRefinementList attribute="habitat" />
+        <CustomRefinementList
+          attribute="type"
+          title="Filter by:"
+          icon
+          value={query?.t ? query.t : null}
+          defaultValue={query?.t ? query.t : null}
+        />
 
-        <header>
-          <h3>Legendary type</h3>
-        </header>
-        <CustomRefinementList attribute="legendaryType" />
+        <CustomRefinementList attribute="habitat" title="habitats" />
+
+        <CustomRefinementList
+          attribute="legendaryType"
+          title="Legendary type"
+        />
       </aside>
     );
   };
@@ -388,12 +444,12 @@ const Search = () => {
         <CustomSearchBox searchBoxRef={searchBoxRef} />
         {expandImages && <Modal data={modalData} />}
         <div className="pos-relative top-0 w-100p">
-          <div className="d-grid g-6">
+          <div className="d-grid g-8">
             <SidebarFilters className="gcstart-1 gcend-2" />
             <div
               className={cx([
                 "p-8 gcstart-2",
-                sidebarOpen ? "gcend-5" : "gcend-7",
+                sidebarOpen ? "gcend-7" : "gcend-9",
               ])}
             >
               <Hits
@@ -409,7 +465,7 @@ const Search = () => {
                 setSidebarOpen={setSidebarOpen}
                 setExpandImages={setExpandImages}
                 setModalData={setModalData}
-                className="gcstart-5 gcend-7"
+                className="gcstart-7 gcend-9"
               />
             )}
           </div>
