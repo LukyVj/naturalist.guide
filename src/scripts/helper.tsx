@@ -24,12 +24,14 @@ export const slugify = (str: string) => {
 export const githubIssue = (hit: any) => {
   let url;
   url = `${process.env.REACT_APP_REPO_URL}issues/new?labels=${
-    hit.type
+    hit.type.includes("animal-") ? hit.type.replace("animal-", "") : hit.type
   }&title=Missing%20or%20incorrect%20data%20for%3A%20${
     hit.name
   }&body=%23%23%23%20Missing%20or%20incorrect%20data%20for%3A%20__%22${
     hit.name
-  }%22__%0A%0A---------------%0A%0A%23%23%23%20Available%20data%3A%0A%60%60%60json%0A${JSON.stringify(
+  }%22__%0A%0AType:${
+    hit.type.includes("animal-") ? hit.type.replace("animal-", "") : hit.type
+  }%0A%0A---------------%0A%0A%23%23%23%20Available%20data%3A%0A%60%60%60json%0A${JSON.stringify(
     hit,
     null,
     2
