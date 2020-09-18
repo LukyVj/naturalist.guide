@@ -34,7 +34,7 @@ const RefinementList = ({
     if (value) {
       refine(value);
     }
-  }, []);
+  }, [refine, value]);
   return (
     <Fragment>
       <header

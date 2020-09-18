@@ -151,7 +151,7 @@ const Search = () => {
 
       console.log(query.t);
     }
-  }, []);
+  }, [query]);
 
   const Modal = ({ data }) => {
     const iframeUrl = `https://jeanropke.github.io/RDOMap/?q=${
