@@ -24,7 +24,7 @@ import { slugify, githubIssue, getUrlParameters } from "../../scripts/helper";
 import * as colors from "../../constants/colors";
 import { CDN_URL } from "../../constants/routes";
 
-const _DEDBUG = false;
+const _DEBUG = false;
 
 const searchClient = algoliasearch(
   process.env.REACT_APP_ALGOLIA_APP_ID,
@@ -351,7 +351,7 @@ const Search = () => {
           />
         </a>
         <header className="p-8 ph-16">
-          {_DEDBUG && (
+          {_DEBUG && (
             <textarea
               className="w-100p h-300"
               value={`
