@@ -18,7 +18,8 @@ const Image = ({ alt, className, imageRef, onError, src }: ImageProps) => {
       onError={
         onError
           ? onError
-          : () => (imageRef.current.src = require("../../images/undiscovered.png"))
+          : () =>
+              (imageRef.current.src = require("../../images/undiscovered.png"))
       }
       className={className}
       alt={alt}

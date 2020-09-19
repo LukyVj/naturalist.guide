@@ -155,12 +155,12 @@
   },
   {
     "name": "Dragon's Mouth Orchid",
-    "value": "dragon_s_mouth_orchid",
-    "photoName": "dragon_s_mouth_orchid",
-    "thumbnailName": "dragon_s_mouth_orchid",
+    "value": "dragons_mouth_orchid",
+    "photoName": "dragons_mouth_orchid",
+    "thumbnailName": "dragons_mouth_orchid",
     "description": false,
     "habitat": false,
-    "mapLocation": "dragon_s_mouth_orchid",
+    "mapLocation": "dragons_mouth_orchid",
     "type": "plants"
   },
   {
@@ -255,12 +255,12 @@
   },
   {
     "name": "Lady Slipper Orchid",
-    "value": "lady_slipper_orchid",
-    "photoName": "lady_slipper_orchid",
-    "thumbnailName": "lady_slipper_orchid",
+    "value": "ladies_slipper_orchid",
+    "photoName": "ladies_slipper_orchid",
+    "thumbnailName": "ladies_slipper_orchid",
     "description": false,
     "habitat": false,
-    "mapLocation": "lady_slipper_orchid",
+    "mapLocation": "ladies_slipper_orchid",
     "type": "plants"
   },
   {
@@ -279,12 +279,12 @@
   },
   {
     "name": "Moccasin Orchid",
-    "value": "moccasin_orchid",
-    "photoName": "moccasin_orchid",
-    "thumbnailName": "moccasin_orchid",
+    "value": "moccasin_flower_orchid",
+    "photoName": "moccasin_flower_orchid",
+    "thumbnailName": "moccasin_flower_orchid",
     "description": false,
     "habitat": false,
-    "mapLocation": "moccasin_orchid",
+    "mapLocation": "moccasin_flower_orchid",
     "type": "plants"
   },
   {
@@ -327,7 +327,7 @@
   },
   {
     "name": "Parasol Mushroom",
-    "value": "parasol-mushroom",
+    "value": "parasol_mushroom",
     "photoName": "parasol_mushroom_photo",
     "thumbnailName": "parasol_mushroom",
     "description": [
@@ -335,7 +335,7 @@
       "Can be crafted into a Special Horse Reviver"
     ],
     "habitat": false,
-    "mapLocation": "parasol",
+    "mapLocation": "parasol_mushroom",
     "type": "plants",
     "latinName": "Macrolepiota Procera"
   },
@@ -365,12 +365,12 @@
   },
   {
     "name": "Ram's Head",
-    "value": "ram_s_head",
-    "photoName": "ram_s_head",
-    "thumbnailName": "ram_s_head",
+    "value": "rams_head",
+    "photoName": "rams_head",
+    "thumbnailName": "rams_head",
     "description": false,
     "habitat": false,
-    "mapLocation": "ram_s_head",
+    "mapLocation": "rams_head",
     "type": "plants"
   },
   {
@@ -409,12 +409,12 @@
   },
   {
     "name": "Sparrow Egg Orchid",
-    "value": "sparrow_egg_orchid",
-    "photoName": "sparrow_egg_orchid",
-    "thumbnailName": "sparrow_egg_orchid",
+    "value": "sparrow_s_egg_orchid",
+    "photoName": "sparrow_s_egg_orchid",
+    "thumbnailName": "sparrow_s_egg_orchid",
     "description": false,
     "habitat": false,
-    "mapLocation": "sparrow_egg_orchid",
+    "mapLocation": "sparrow_s_egg_orchid",
     "type": "plants"
   },
   {

@@ -309,7 +309,7 @@ const Search = () => {
   };
   const Hit = ({ hit }) => {
     const mapImageRef = useRef(null);
-    const mapIconeRef = useRef(null);
+    const mapIconRef = useRef(null);
 
     const itemType =
       hit.type === "plants"
@@ -318,16 +318,23 @@ const Search = () => {
         ? "horses"
         : `animals/${hit.type.replace("animal-", "")}`;
 
-    const thumbnail_url = `${CDN_URL}${itemType}/icons/${hit.thumbnailName}.png`;
+    const thumbnail_url = `${CDN_URL}${itemType}/${
+      itemType === "animals/naturalist" ? "mp_animal" : "icons"
+    }/${hit.thumbnailName}.png`;
     const photo_url =
       itemType === "horses"
         ? hit.photoName
         : `${CDN_URL}${itemType}/photos/${hit.photoName}.png`;
-    const map_url = `${`${CDN_URL}maps/${itemType}/`}${
-      hit.isLegendary === true ? "legendary/" : ""
-    }${hit.mapLocation.replace(/-/g, "_")}.${
-      hit.type === "plants" ? "jpg" : "png"
-    }`;
+
+    const strMapLoc = slugify(hit.mapLocation);
+
+    const map_url = `${`${CDN_URL}maps/${
+      itemType === "animals/naturalist" ? "animals/" : itemType
+    }/`}${hit.isLegendary === true ? "legendary/" : ""}${
+      itemType === "animals/naturalist"
+        ? strMapLoc.replace(/_/g, "-")
+        : strMapLoc.replace(/-/g, "_")
+    }.${hit.type === "plants" ? "jpg" : "png"}`;
     return (
       <article
         className="pos-relative top-0 h-100p d-flex fxd-column jc-between h-auto hover:color-white cursor-pointer"
@@ -382,7 +389,7 @@ map_url = ${map_url}`}
               src={itemType === "horses" ? photo_url : thumbnail_url}
               className="w-90p h-90p obf-cover obp-center va-middle gcstart-1 gcend-3 as-center"
               alt={`icon from rockstar®  for ${hit.name}`}
-              imageRef={mapIconeRef}
+              imageRef={mapIconRef}
             />
             {itemType !== "horses" && (
               <Image
