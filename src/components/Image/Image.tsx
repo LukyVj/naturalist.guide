@@ -3,7 +3,7 @@ import { css, jsx } from "@emotion/core";
 
 interface ImageProps {
   alt: string;
-  css?: object;
+  css?: any;
   className?: string;
   src: string;
   imageRef?: any;
@@ -11,7 +11,14 @@ interface ImageProps {
   [key: string]: any;
 }
 
-const Image = ({ alt, className, imageRef, onError, src }: ImageProps) => {
+const Image = ({
+  alt,
+  className,
+  imageRef,
+  onError,
+  src,
+  other,
+}: ImageProps) => {
   return (
     <img
       src={src}
@@ -19,7 +26,7 @@ const Image = ({ alt, className, imageRef, onError, src }: ImageProps) => {
         onError
           ? onError
           : () =>
-              (imageRef.current.src = require("../../images/undiscovered.png"))
+              (imageRef.current.src = require("../../images/backgrounds/undiscovered.png"))
       }
       className={className}
       alt={alt}

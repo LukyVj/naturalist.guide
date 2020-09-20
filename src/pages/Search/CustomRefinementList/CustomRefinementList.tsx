@@ -39,7 +39,7 @@ const RefinementList = ({
     <Fragment>
       <header
         css={css`
-          background: url(${require("../../../images/menu_header.png")})
+          background: url(${require("../../../images/backgrounds/menu_header.png")})
             no-repeat center center / 100% 100%;
         `}
         className="pv-8 mb-8 d-flex ai-center jc-center"
@@ -55,20 +55,6 @@ const RefinementList = ({
             : item.label;
           return (
             <li key={item.label} className="d-flex pv-4">
-              <div
-                className="tick mr-8"
-                css={css`
-                  width: 1.2em;
-                  height: 1.2em;
-                  min-width: 1.2em;
-                  min-height: 1.2em;
-                  position: relative;
-                  top: 1px;
-                  background: ${item.isRefined
-                    ? `url(${require("../../../images/menu_icon_tick.png")})no-repeat center center / 80%, url(${require("../../../images/selection_box_square.png")})no-repeat center center / 110%`
-                    : `url(${require("../../../images/selection_box_square.png")})no-repeat center center / 100%`};
-                `}
-              ></div>
               <a
                 href={createURL(item.value)}
                 onClick={(event) => {
@@ -80,21 +66,48 @@ const RefinementList = ({
                   "color-white td-none d-flex ai-center",
                   item.isRefined && "fw-bold"
                 )}
-                css={
-                  item.isRefined &&
-                  css`
-                    border-bottom: 1px solid ${colors.FARWEST};
-                  `
-                }
               >
+                <div
+                  className="tick mr-8"
+                  css={css`
+                    width: 1.2em;
+                    height: 1.2em;
+                    min-width: 1.2em;
+                    min-height: 1.2em;
+                    position: relative;
+                    top: 1px;
+                    background: ${item.isRefined
+                      ? `url(${require("../../../images/icons/menu_icon_tick.png")})no-repeat center center / 80%, url(${require("../../../images/icons/selection_box_square.png")})no-repeat center center / 110%`
+                      : `url(${require("../../../images/icons/selection_box_square.png")})no-repeat center center / 100%`};
+                  `}
+                ></div>
                 {icon && label !== "false" && (
-                  <Image
-                    src={require(`../../../images/icons/satchel_${label}.png`)}
-                    alt="icon"
-                    className="w-20 mr-8"
-                  />
+                  <span
+                    className={cx(
+                      "d-inline-block bdr-max mr-8 w-20 h-20",
+                      item.isRefined ? "bgc-farwest" : "bgc-black"
+                    )}
+                  >
+                    <Image
+                      src={require(`../../../images/icons/satchel_${label}.png`)}
+                      alt="icon"
+                      className="w-100p h-100p obf-cover obp-center"
+                    />
+                  </span>
                 )}
-                {label} ({item.count})
+                <span
+                  css={
+                    item.isRefined &&
+                    css`
+                      border-bottom: 1px solid ${colors.FARWEST};
+                    `
+                  }
+                >
+                  {label}{" "}
+                  <span className="fw-bold ff-lino lsp-big ml-8 va-middle">
+                    ({item.count})
+                  </span>
+                </span>
               </a>
             </li>
           );

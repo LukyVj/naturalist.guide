@@ -182,7 +182,7 @@ const Search = () => {
               display: block;
               width: 100%;
               height: 100%;
-              background: url(${require("../../images/bgSidebar.jpg")});
+              background: url(${require("../../images/backgrounds/bgSidebar.jpg")});
               -webkit-mask-box-image: url(${require("../../images/masks/text-banner.svg")})
                 14 repeat;
               mask-border: url(${require("../../images/masks/text-banner.svg")})
@@ -275,7 +275,7 @@ const Search = () => {
                             ? `legendary/${slugify(data.name)}.png`
                             : `${slugify(data.mapLocation)}.png`
                         }`
-                      : require("../../images/undiscovered.png")
+                      : require("../../images/backgrounds/undiscovered.png")
                   }
                   className="w-100p h-100p obf-cover obp-center"
                   alt={`Location for ${data.name}`}
@@ -352,7 +352,7 @@ const Search = () => {
           title={`Missing or incorrect data for ${hit.name}?`}
         >
           <Image
-            src={require("../../images/menu_icon_info_warning.png")}
+            src={require("../../images/icons/menu_icon_info_warning.png")}
             alt="Open issue on github"
             className="w-20 op-50p hover:op-100p"
           />
@@ -365,7 +365,9 @@ const Search = () => {
 type = ${itemType}
 thumbnail_url = ${thumbnail_url}
 photo_url = ${photo_url}
-map_url = ${map_url}`}
+map_url = ${map_url}
+
+description = ${hit.description}`}
             />
           )}
           <span className="h-100p ts-regular d-flex ai-center">

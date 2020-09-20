@@ -5,7 +5,7 @@
     "photoName": "acuna_s_star_orchid",
     "thumbnailName": "acuna_s_star_orchid",
     "description": false,
-    "habitat": false,
+    "habitat": "",
     "mapLocation": "acuna_s_star_orchid",
     "type": "plants"
   },
@@ -14,11 +14,9 @@
     "value": "alaskan_ginseng",
     "photoName": "alaskin_ginseng_photo",
     "thumbnailName": "alaskan_ginseng",
-    "description": [
-      "Alaskan Ginseng shrubs can be identified by their large palmate leaves, thorny stems, and small red fruits. The clusters of berries can be found growing at the top of the plant. These plants are usually found in forests and moist areas, growing across Ambarino, and northern West Elizabeth. This medicinal plant can be crafted into medicine or consumed to replenish your Health Core.",
-      "Can be crafted into a Potent Miracle Tonic"
-    ],
-    "habitat": false,
+    "description": "Alaskan Ginseng shrubs can be identified by their large palmate leaves, thorny stems, and small red fruits. The clusters of berries can be found growing at the top of the plant. These plants are usually found in forests and moist areas, growing across Ambarino, and northern West Elizabeth. This medicinal plant can be crafted into medicine or consumed to replenish your Health Core.",
+    "habitat": "",
+    "comment": "Can be crafted into a Potent Miracle Tonic",
     "mapLocation": "alaskan_ginseng",
     "type": "plants",
     "latinName": "Oplopanax Horridus"
@@ -28,11 +26,9 @@
     "value": "american_ginseng",
     "photoName": "american_ginseng_photo",
     "thumbnailName": "american_ginseng",
-    "description": [
-      "American Ginseng shrubs can be identified by their large palmate leaves, smooth stems and small cluster of red berries. The cluster of berries are smaller than the clusters found on Alaskan Ginseng. These plants are native to forests and moist areas, from West Elizabeth to the edges of New Hanover. This medicinal plant can be crafted into medicine or consumed to replenish your Health Core.",
-      "Can be crafted into a Potent Miracle Tonic"
-    ],
-    "habitat": false,
+    "description": "American Ginseng shrubs can be identified by their large palmate leaves, smooth stems and small cluster of red berries. The cluster of berries are smaller than the clusters found on Alaskan Ginseng. These plants are native to forests and moist areas, from West Elizabeth to the edges of New Hanover. This medicinal plant can be crafted into medicine or consumed to replenish your Health Core.",
+    "habitat": "",
+    "comment": "Can be crafted into a Potent Miracle Tonic",
     "mapLocation": "american_ginseng",
     "type": "plants",
     "latinName": "Panax Quinquefolius"
@@ -43,7 +39,7 @@
     "photoName": "bay_bolete",
     "thumbnailName": "bay_bolete",
     "description": false,
-    "habitat": false,
+    "habitat": "",
     "mapLocation": "bay_bolete",
     "type": "plants"
   },
@@ -52,11 +48,9 @@
     "value": "blackberry",
     "photoName": "blackberry_photo",
     "thumbnailName": "blackberry",
-    "description": [
-      "Blackberry shrubs can be identified by the serrated leaves and black aggregate fruit. The shrubs can grow in poor soil so locations like woodlands, hedges and hillsides make the perfect habitats. This plant is popular in West Elizabeth, as well as along the Dakota River banks. Blackberries can be consumed to replenish your Health Core or crafted into Predator Bait.",
-      "Can be crafted into a Potent Predator Bait"
-    ],
-    "habitat": false,
+    "description": "Blackberry shrubs can be identified by the serrated leaves and black aggregate fruit. The shrubs can grow in poor soil so locations like woodlands, hedges and hillsides make the perfect habitats. This plant is popular in West Elizabeth, as well as along the Dakota River banks. Blackberries can be consumed to replenish your Health Core or crafted into Predator Bait.",
+    "comment": "Can be crafted into a Potent Predator Bait",
+    "habitat": "",
     "mapLocation": "blackberry",
     "type": "plants",
     "latinName": "Rubus"
@@ -67,7 +61,7 @@
     "photoName": "blackcurrant",
     "thumbnailName": "black_currant",
     "description": false,
-    "habitat": false,
+    "habitat": "",
     "mapLocation": "blackcurrant",
     "type": "plants"
   },
@@ -77,7 +71,7 @@
     "photoName": "burdock_root",
     "thumbnailName": "burdock_root",
     "description": false,
-    "habitat": false,
+    "habitat": "",
     "mapLocation": "burdock_root",
     "type": "plants"
   },
@@ -86,11 +80,9 @@
     "value": "chanterelles",
     "photoName": "chanterelles_photo",
     "thumbnailName": "chanterelles",
-    "description": [
-      "Chanterelles are large yellow fungi that grow in clusters on low ground. The color of the fungi can range from white to bright orange which makes them easy to spot. This type of fungi can often be found in grass areas, woodlands across Lemoyne, and the east of New Hanover. Chanterelles can be consumed to increase your Health Core or crafted into Herbivore Bait.",
-      "Can be crafted into a Potent Herbivore Bait"
-    ],
-    "habitat": false,
+    "description": "Chanterelles are large yellow fungi that grow in clusters on low ground. The color of the fungi can range from white to bright orange which makes them easy to spot. This type of fungi can often be found in grass areas, woodlands across Lemoyne, and the east of New Hanover. Chanterelles can be consumed to increase your Health Core or crafted into Herbivore Bait.",
+    "comment": "Can be crafted into a Potent Herbivore Bait",
+    "habitat": "",
     "mapLocation": "chanterelles",
     "type": "plants",
     "latinName": "Cantharellus"
@@ -101,7 +93,7 @@
     "photoName": "cigar_orchid",
     "thumbnailName": "cigar_orchid",
     "description": false,
-    "habitat": false,
+    "habitat": "",
     "mapLocation": "cigar_orchid",
     "type": "plants"
   },
@@ -111,7 +103,7 @@
     "photoName": "clamshell_orchid",
     "thumbnailName": "clamshell_orchid",
     "description": false,
-    "habitat": false,
+    "habitat": "",
     "mapLocation": "clamshell_orchid",
     "type": "plants"
   },
@@ -120,11 +112,9 @@
     "value": "common_bulrush",
     "photoName": "common_bulrush_photo",
     "thumbnailName": "common_bulbrush",
-    "description": [
-      "Common Bulrush can be recognized by the long leaves and brown staminate flowers. This plant can be found near streams and lakes in every region across America. The plant is poisonous to humans so it should never be consumed, though it can be used in crafting a Horse Ointment. ",
-      "Can be crafted into a Horse Ointment"
-    ],
-    "habitat": false,
+    "description": "Common Bulrush can be recognized by the long leaves and brown staminate flowers. This plant can be found near streams and lakes in every region across America. The plant is poisonous to humans so it should never be consumed, though it can be used in crafting a Horse Ointment. ",
+    "comment": "Can be crafted into a Horse Ointment",
+    "habitat": "",
     "mapLocation": "common_bulrush",
     "type": "plants",
     "latinName": "Typha Latifolia"
@@ -134,11 +124,9 @@
     "value": "creeping_thyme",
     "photoName": "creeping_thyme_photo",
     "thumbnailName": "creeping_thyme",
-    "description": [
-      "Creeping Thyme is an evergreen subshrub with woody stems, small green leaves and tiny purple bell shaped flowers. The durability of this plant means that it can be found in most places across America. This plant can often be found growing in thin soil near river banks, sandy soil, and near rocks. The herb can be consumed to replenish your Dead Eye Core or as a seasoning when cooking.",
-      "Can be used in the Thyme Big Game recipe"
-    ],
-    "habitat": false,
+    "description": "Creeping Thyme is an evergreen subshrub with woody stems, small green leaves and tiny purple bell shaped flowers. The durability of this plant means that it can be found in most places across America. This plant can often be found growing in thin soil near river banks, sandy soil, and near rocks. The herb can be consumed to replenish your Dead Eye Core or as a seasoning when cooking.",
+    "comment": "Can be used in the Thyme Big Game recipe",
+    "habitat": "",
     "mapLocation": "creeping_thyme",
     "type": "plants",
     "latinName": "Thymus Serpyllum"
@@ -149,7 +137,7 @@
     "photoName": "desert_sage",
     "thumbnailName": "desert_sage",
     "description": false,
-    "habitat": false,
+    "habitat": "",
     "mapLocation": "desert_sage",
     "type": "plants"
   },
@@ -159,7 +147,7 @@
     "photoName": "dragons_mouth_orchid",
     "thumbnailName": "dragons_mouth_orchid",
     "description": false,
-    "habitat": false,
+    "habitat": "",
     "mapLocation": "dragons_mouth_orchid",
     "type": "plants"
   },
@@ -168,11 +156,9 @@
     "value": "english_mace",
     "photoName": "english_mace_photo",
     "thumbnailName": "english_mace",
-    "description": [
-      "English Mace can be identified by their long stems, serrated leaves, and numerous small creamy yellow flowers. They can be found growing near the river banks in Rio Bravo, New Austin. English Mace can be used in crafting to increase your health levels or to help restore the Horse Stamina Core.",
-      "Can be used to craft a Special Health Cure"
-    ],
-    "habitat": false,
+    "description": "English Mace can be identified by their long stems, serrated leaves, and numerous small creamy yellow flowers. They can be found growing near the river banks in Rio Bravo, New Austin. English Mace can be used in crafting to increase your health levels or to help restore the Horse Stamina Core.",
+    "habitat": "",
+    "comment": "Can be used to craft a Special Health Cure",
     "mapLocation": "english_mace",
     "type": "plants",
     "latinName": "Achillea Ageratum"
@@ -182,11 +168,9 @@
     "value": "evergreen_huckleberry",
     "photoName": "evergreen_huckleberry_photo",
     "thumbnailName": "evergreen_huckleberry",
-    "description": [
-      "Evergreen Huckleberry shrubs can be recognized by the sharp evergreen leaves and black berries. The shrubs be found along the Kamassa River that runs through Lemoyne and New Hanover. The berries can be consumed to replenish your Health Core or crafted into Predator Bait.",
-      "Can be crafted into a Potent Predator Bait"
-    ],
-    "habitat": false,
+    "description": "Evergreen Huckleberry shrubs can be recognized by the sharp evergreen leaves and black berries. The shrubs be found along the Kamassa River that runs through Lemoyne and New Hanover. The berries can be consumed to replenish your Health Core or crafted into Predator Bait.",
+    "comment": "Can be crafted into a Potent Predator Bait",
+    "habitat": "",
     "mapLocation": "evergreen_huckleberry",
     "type": "plants",
     "latinName": "Vaccinium Ovatum"
@@ -197,7 +181,7 @@
     "photoName": "ghost_orchid",
     "thumbnailName": "ghost_orchid",
     "description": false,
-    "habitat": false,
+    "habitat": "",
     "mapLocation": "ghost_orchid",
     "type": "plants"
   },
@@ -206,11 +190,9 @@
     "value": "golden_currant",
     "photoName": "golden_currant_photo",
     "thumbnailName": "golden_currant",
-    "description": [
-      "Golden Currant shrubs are easily recognized by their bright yellow petals and golden berries. Shrubs can often be found in foothills and along streams in West Elizabeth and the north-east of New Hanover. This herb is one of the key ingredients when making Snake Oil. When consumed by itself, the herb will refill your Dead Eye Core.",
-      "Can be crafted into Special Snake Oil"
-    ],
-    "habitat": false,
+    "description": "Golden Currant shrubs are easily recognized by their bright yellow petals and golden berries. Shrubs can often be found in foothills and along streams in West Elizabeth and the north-east of New Hanover. This herb is one of the key ingredients when making Snake Oil. When consumed by itself, the herb will refill your Dead Eye Core.",
+    "habitat": "",
+    "comment": "Can be crafted into Special Snake Oil",
     "mapLocation": "golden_currant",
     "type": "plants",
     "latinName": "Ribes Aureum"
@@ -220,11 +202,9 @@
     "value": "hummingbird_sage",
     "photoName": "hummingbird_sage_photo",
     "thumbnailName": "hummingbird_sage",
-    "description": [
-      "Hummingbird Sage can be identified by their square stems and their deep purple flowers. A common place to spot these herbs is in dry shaded areas, under dense foliage and trees in Lemoyne, the west side of West Elizabeth, as well as along both banks of the Kamassa River in New Hanover. When crafted into Bitters or consumed, this herb will recharge your Stamina Core.",
-      "Can be consumed to refill your Stamina Core"
-    ],
-    "habitat": false,
+    "description": "Hummingbird Sage can be identified by their square stems and their deep purple flowers. A common place to spot these herbs is in dry shaded areas, under dense foliage and trees in Lemoyne, the west side of West Elizabeth, as well as along both banks of the Kamassa River in New Hanover. When crafted into Bitters or consumed, this herb will recharge your Stamina Core.",
+    "habitat": "",
+    "comment": "Can be consumed to refill your Stamina Core",
     "mapLocation": "hummingbird_sage",
     "type": "plants",
     "latinName": "Salvia Spathacea"
@@ -234,11 +214,9 @@
     "value": "indian_tobacco",
     "photoName": "indian_tobacco_photo",
     "thumbnailName": "indian_tobacco",
-    "description": [
-      "Indian Tobacco can be identified by their tall height, serrated leaves and delicate lilac flowers. These plants are native to woodlands and savannas and can be found growing in West Elizabeth, Ambarino, and Lemoyne. The herb can be consumed to increase your Dead Eye Core, or as one of the key ingredients to make Snake Oil.",
-      "Can be used to craft a Potent Miracle Tonic"
-    ],
-    "habitat": false,
+    "description": "Indian Tobacco can be identified by their tall height, serrated leaves and delicate lilac flowers. These plants are native to woodlands and savannas and can be found growing in West Elizabeth, Ambarino, and Lemoyne. The herb can be consumed to increase your Dead Eye Core, or as one of the key ingredients to make Snake Oil.",
+    "comment": "Can be used to craft a Potent Miracle Tonic",
+    "habitat": "",
     "mapLocation": "indian_tobacco",
     "type": "plants",
     "latinName": "Lobelia Inflata"
@@ -249,7 +227,7 @@
     "photoName": "lady_of_the_night_orchid",
     "thumbnailName": "lady_of_the_night_orchid",
     "description": false,
-    "habitat": false,
+    "habitat": "",
     "mapLocation": "lady_of_the_night_orchid",
     "type": "plants"
   },
@@ -259,7 +237,7 @@
     "photoName": "ladies_slipper_orchid",
     "thumbnailName": "ladies_slipper_orchid",
     "description": false,
-    "habitat": false,
+    "habitat": "",
     "mapLocation": "ladies_slipper_orchid",
     "type": "plants"
   },
@@ -268,11 +246,9 @@
     "value": "milkweed",
     "photoName": "milkweed_photo",
     "thumbnailName": "milkweed",
-    "description": [
-      "Milkweed can be identified by the large stems and leaves, and clusters of lilac flowers. It is a popular plant that can be seen growing near the river banks of Bayou Nwa, and Dewberry Creek in Lemoyne. This herb contains cardiac glycoside poisons which can be fatal to animals, depending on the amount consumed and the age of the plant. Arrows can be tipped in the poisons when hunting and fighting. If processed properly, this herb can be consumed to increase your Health levels or crafted into special items.",
-      "Can be consumed to refill your Health Core"
-    ],
-    "habitat": false,
+    "description": "Milkweed can be identified by the large stems and leaves, and clusters of lilac flowers. It is a popular plant that can be seen growing near the river banks of Bayou Nwa, and Dewberry Creek in Lemoyne. This herb contains cardiac glycoside poisons which can be fatal to animals, depending on the amount consumed and the age of the plant. Arrows can be tipped in the poisons when hunting and fighting. If processed properly, this herb can be consumed to increase your Health levels or crafted into special items.",
+    "habitat": "",
+    "comment": "Can be consumed to refill your Health Core",
     "mapLocation": "milkweed",
     "type": "plants",
     "latinName": "Asclepias Syriaca"
@@ -283,7 +259,7 @@
     "photoName": "moccasin_flower_orchid",
     "thumbnailName": "moccasin_flower_orchid",
     "description": false,
-    "habitat": false,
+    "habitat": "",
     "mapLocation": "moccasin_flower_orchid",
     "type": "plants"
   },
@@ -293,7 +269,7 @@
     "photoName": "night_scented_orchid",
     "thumbnailName": "night_scented_orchid",
     "description": false,
-    "habitat": false,
+    "habitat": "",
     "mapLocation": "night_scented_orchid",
     "type": "plants"
   },
@@ -302,11 +278,9 @@
     "value": "oleander_sage",
     "photoName": "oleander_sage_photo",
     "thumbnailName": "oleander_sage",
-    "description": [
-      "Oleander Sage shrubs can be identified by the thin leaves and small five petal pink flowers. The popular herb can be seen growing near the river banks of Bayou Nwa. This shrub is considered to be one of the most poisonous plants in America and should never be consumed. The cardiac glycoside poisons produced by this plant can be used to craft deadly weapons.",
-      "Can be used to craft a Poison Throwing Knife"
-    ],
-    "habitat": false,
+    "description": "Oleander Sage shrubs can be identified by the thin leaves and small five petal pink flowers. The popular herb can be seen growing near the river banks of Bayou Nwa. This shrub is considered to be one of the most poisonous plants in America and should never be consumed. The cardiac glycoside poisons produced by this plant can be used to craft deadly weapons.",
+    "comment": "Can be used to craft a Poison Throwing Knife",
+    "habitat": "",
     "mapLocation": "oleander_sage",
     "type": "plants",
     "latinName": "Nerium"
@@ -316,11 +290,9 @@
     "value": "oregano",
     "photoName": "oregano_photo",
     "thumbnailName": "oregano",
-    "description": [
-      "Oregano can be recognized by their oval shaped leaves and purple sprouting flowers. The shrubs spread quickly in diameter and can grow up to thirty inches. This plant thrives in dry grasslands which makes it a popular plant across America as it can be found in most places. Oregano is a popular herb used for seasoning meats, and can also be consumed by itself to increase your Stamina Core.",
-      "Can be used in the Oregano Plump Bird recipe"
-    ],
-    "habitat": false,
+    "description": "Oregano can be recognized by their oval shaped leaves and purple sprouting flowers. The shrubs spread quickly in diameter and can grow up to thirty inches. This plant thrives in dry grasslands which makes it a popular plant across America as it can be found in most places. Oregano is a popular herb used for seasoning meats, and can also be consumed by itself to increase your Stamina Core.",
+    "habitat": "",
+    "comment": "Can be used in the Oregano Plump Bird recipe",
     "mapLocation": "oregano",
     "type": "plants",
     "latinName": "Origanum Vulgare"
@@ -330,11 +302,9 @@
     "value": "parasol_mushroom",
     "photoName": "parasol_mushroom_photo",
     "thumbnailName": "parasol_mushroom",
-    "description": [
-      "Parasol Mushroom is a fungi that can be recognized by its domed shape pileus. This type of mushroom can often be found in well-drained soil and woodlands across America. These mushrooms should never be consumed when raw as they contain some toxic elements. When prepared correctly, they can increase your Health Core. They can also be crafted into Herbivore Bait.",
-      "Can be crafted into a Special Horse Reviver"
-    ],
-    "habitat": false,
+    "description": "Parasol Mushroom is a fungi that can be recognized by its domed shape pileus. This type of mushroom can often be found in well-drained soil and woodlands across America. These mushrooms should never be consumed when raw as they contain some toxic elements. When prepared correctly, they can increase your Health Core. They can also be crafted into Herbivore Bait.",
+    "habitat": "",
+    "comment": "Can be crafted into a Special Horse Reviver",
     "mapLocation": "parasol_mushroom",
     "type": "plants",
     "latinName": "Macrolepiota Procera"
@@ -345,7 +315,7 @@
     "photoName": "prairie_poppy",
     "thumbnailName": "prairie_poppy",
     "description": false,
-    "habitat": false,
+    "habitat": "",
     "mapLocation": "prairie_poppy",
     "type": "plants"
   },
@@ -354,11 +324,9 @@
     "value": "queen_s_orchid",
     "photoName": "queens_orchid_photo",
     "thumbnailName": "queens_orchid",
-    "description": [
-      "The Queen's Orchid can be identified by the white sepals, and purple and white curled petal. The Queen's Orchid is native to swampland areas and can be found growing in Bayou Nwa, Lemoyne. The orchidelirium trend has meant that this rare orchid is extremely valuable to collectors and botanists.",
-      "A rare and valuable plant"
-    ],
-    "habitat": false,
+    "description": "The Queen's Orchid can be identified by the white sepals, and purple and white curled petal. The Queen's Orchid is native to swampland areas and can be found growing in Bayou Nwa, Lemoyne. The orchidelirium trend has meant that this rare orchid is extremely valuable to collectors and botanists.",
+    "comment": "A rare and valuable plant",
+    "habitat": "",
     "mapLocation": "queen_s_orchid",
     "type": "plants",
     "latinName": "Thelymitra Crinita"
@@ -369,7 +337,7 @@
     "photoName": "rams_head",
     "thumbnailName": "rams_head",
     "description": false,
-    "habitat": false,
+    "habitat": "",
     "mapLocation": "rams_head",
     "type": "plants"
   },
@@ -379,7 +347,7 @@
     "photoName": "rat_tail_orchid",
     "thumbnailName": "rat_tail_orchid",
     "description": false,
-    "habitat": false,
+    "habitat": "",
     "mapLocation": "rat_tail_orchid",
     "type": "plants"
   },
@@ -388,11 +356,9 @@
     "value": "red_raspberry",
     "photoName": "red_raspberry_photo",
     "thumbnailName": "red_raspberry",
-    "description": [
-      "Red Raspberry bushes are easily identified by their large size and their bright red berries. Due to the simple conditions that this plant requires, shrubs can be found flourishing across most regions of America. The raspberry fruit can be consumed to replenish your Health Core or crafted into Predator Bait.",
-      "Can be crafted into a Potent Herbivore Bait"
-    ],
-    "habitat": false,
+    "description": "Red Raspberry bushes are easily identified by their large size and their bright red berries. Due to the simple conditions that this plant requires, shrubs can be found flourishing across most regions of America. The raspberry fruit can be consumed to replenish your Health Core or crafted into Predator Bait.",
+    "habitat": "",
+    "comment": "Can be crafted into a Potent Herbivore Bait",
     "mapLocation": "red_raspberry",
     "type": "plants",
     "latinName": "Rubus Idaeus"
@@ -403,7 +369,7 @@
     "photoName": "red_sage",
     "thumbnailName": "red_sage",
     "description": false,
-    "habitat": false,
+    "habitat": "",
     "mapLocation": "red_sage",
     "type": "plants"
   },
@@ -413,7 +379,7 @@
     "photoName": "sparrow_s_egg_orchid",
     "thumbnailName": "sparrow_s_egg_orchid",
     "description": false,
-    "habitat": false,
+    "habitat": "",
     "mapLocation": "sparrow_s_egg_orchid",
     "type": "plants"
   },
@@ -423,7 +389,7 @@
     "photoName": "spider_orchid",
     "thumbnailName": "spider_orchid",
     "description": false,
-    "habitat": false,
+    "habitat": "",
     "mapLocation": "spider_orchid",
     "type": "plants"
   },
@@ -433,7 +399,7 @@
     "photoName": "vanilla_flower",
     "thumbnailName": "vanilla_flower",
     "description": false,
-    "habitat": false,
+    "habitat": "",
     "mapLocation": "vanilla_flower",
     "type": "plants"
   },
@@ -443,7 +409,7 @@
     "photoName": "violet_snowdrop",
     "thumbnailName": "violet_snowdrop",
     "description": false,
-    "habitat": false,
+    "habitat": "",
     "mapLocation": "violet_snowdrop",
     "type": "plants"
   },
@@ -452,11 +418,9 @@
     "value": "wild_carrot",
     "photoName": "wild_carrot_photo",
     "thumbnailName": "wild_carrot",
-    "description": [
-      "Wild Carrot can be easily recognized by its long thin stems and white clustered flowers. The durability of this plant means it can be seen growing across most regions of America, often along roads or in fields. This plant can be crafted into horse items or consumed to replenish your Health Core.",
-      "Can be crafted into a Horse Meal"
-    ],
-    "habitat": false,
+    "description": "Wild Carrot can be easily recognized by its long thin stems and white clustered flowers. The durability of this plant means it can be seen growing across most regions of America, often along roads or in fields. This plant can be crafted into horse items or consumed to replenish your Health Core.",
+    "comment": "Can be crafted into a Horse Meal",
+    "habitat": "",
     "mapLocation": "wild_carrot",
     "type": "plants",
     "latinName": "Daucus Carota"
@@ -467,7 +431,7 @@
     "photoName": "wild_feverfew",
     "thumbnailName": "wild_feverfew",
     "description": false,
-    "habitat": false,
+    "habitat": "",
     "mapLocation": "wild_feverfew",
     "type": "plants"
   },
@@ -476,11 +440,9 @@
     "value": "wild_mint",
     "photoName": "wild_mint_photo",
     "thumbnailName": "wild_mint",
-    "description": [
-      "Wild Mint can be identified by their square stems, pale purple flowers and fragrant leaves. Mint can grow up to thirty inches, making them easy to spot. This plant is common to marshes, along streams and moist meadows which makes it a popular plant across America. Mint is a popular herb used for seasoning meats and can also be consumed by itself to increase your Health Core.",
-      "Can be used in the Minty Prime Beef recipe"
-    ],
-    "habitat": false,
+    "description": "Wild Mint can be identified by their square stems, pale purple flowers and fragrant leaves. Mint can grow up to thirty inches, making them easy to spot. This plant is common to marshes, along streams and moist meadows which makes it a popular plant across America. Mint is a popular herb used for seasoning meats and can also be consumed by itself to increase your Health Core.",
+    "comment": "Can be used in the Minty Prime Beef recipe",
+    "habitat": "",
     "mapLocation": "wild_mint",
     "type": "plants",
     "latinName": "Mentha Arvensis"
@@ -490,11 +452,9 @@
     "value": "wintergreen_berry",
     "photoName": "wintergreen_berry_photo",
     "thumbnailName": "wintergreen_berry",
-    "description": [
-      "Wintergreen Berry is a low growing shrub that is identifiable by the evergreen leaves and red berries. Shrubs can be found in woodlands and forests in the northern regions of Ambarino and New Hanover. The plant can be consumed to replenish your Health Core or crafted into Predator Bait.",
-      "Can be crafted into a Potent Predator Bait"
-    ],
-    "habitat": false,
+    "description": "Wintergreen Berry is a low growing shrub that is identifiable by the evergreen leaves and red berries. Shrubs can be found in woodlands and forests in the northern regions of Ambarino and New Hanover. The plant can be consumed to replenish your Health Core or crafted into Predator Bait.",
+    "habitat": "",
+    "comment": "Can be crafted into a Potent Predator Bait",
     "mapLocation": "wintergreen_berry",
     "type": "plants",
     "latinName": "Gaultheria Procumbens"
@@ -504,11 +464,9 @@
     "value": "yarrow",
     "photoName": "yarrow_photo",
     "thumbnailName": "yarrow",
-    "description": [
-      "Yarrow is easily recognized by the long thin stems and red clusters of flowers. This plant can be found in grasslands and open forest areas in New Hanover and Lemoyne. Yarrow can be consumed to replenish your Health Core or crafted into medicine.",
-      "Can be crafted into a Potent Health Cure"
-    ],
-    "habitat": false,
+    "description": "Yarrow is easily recognized by the long thin stems and red clusters of flowers. This plant can be found in grasslands and open forest areas in New Hanover and Lemoyne. Yarrow can be consumed to replenish your Health Core or crafted into medicine.",
+    "comment": "Can be crafted into a Potent Health Cure",
+    "habitat": "",
     "mapLocation": "yarrow",
     "type": "plants",
     "latinName": "Achillea Millefolium"

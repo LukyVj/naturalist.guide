@@ -37,7 +37,7 @@ const About = () => {
               value={paragraph}
               prefix={
                 <Image
-                  src={require("../../images/tick.png")}
+                  src={require("../../images/icons/tick.png")}
                   alt="tick"
                   className="bdw-1 bdc-white bds-solid w-30 h-30 obf-contain obp-center p-4"
                 />

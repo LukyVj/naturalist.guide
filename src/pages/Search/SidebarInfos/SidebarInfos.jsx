@@ -58,7 +58,7 @@ const SideBarInfos = ({
             display: block;
             width: 100%;
             height: 100%;
-            background: url(${require("../../../images/bgSidebar.jpg")});
+            background: url(${require("../../../images/backgrounds/bgSidebar.jpg")});
             -webkit-mask-box-image: url(${require("../../../images/masks/text-banner.svg")})
               14 repeat;
             mask-border: url(${require("../../../images/masks/text-banner.svg")})
