@@ -1,0 +1,9 @@
+# Create React App 3 (webpack 4) needs the legacy OpenSSL provider on Node 17+.
+[build]
+  command = "yarn build"
+  publish = "build"
+
+[build.environment]
+  NODE_VERSION = "20"
+  NODE_OPTIONS = "--openssl-legacy-provider"
+  CI = "false"
