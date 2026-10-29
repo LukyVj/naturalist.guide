@@ -1,17 +1,21 @@
 /** @jsx jsx */
 /* eslint-disable */
-import React, { useState, Fragment } from "react";
+import React, { useState, Fragment, useRef } from "react";
 import Button from "../../../components/Button";
+import Image from "../../../components/Image";
 
 import { css, jsx } from "@emotion/core";
+import cx from "classnames";
 
 import { slugify } from "../../../scripts/helper";
+import { CDN_URL } from "../../../constants/routes";
 
 const SideBarInfos = ({
   data,
   setExpandImages,
   setModalData,
   setSidebarOpen,
+  className,
 }) => {
   const iframeUrl = `https://jeanropke.github.io/RDOMap/?q=${
     data.isLegendary
@@ -21,9 +25,26 @@ const SideBarInfos = ({
   const [viewIframe, setViewIframe] = useState(false);
   const [frameUrl, setFrameUrl] = useState(iframeUrl);
 
+  const photoRef = useRef(null);
+  const iconRef = useRef(null);
+
+  const itemType =
+    data.type === "plants"
+      ? "plants"
+      : data.type === "animal-horses"
+      ? "horses"
+      : `animals/${data.type.replace("animal-", "")}`;
+
+  const photoName = data.photoName.includes("_photo")
+    ? data.photoName.replace("_photo", "")
+    : data.photoName;
+
   return (
     <div
-      className="fx-4 pos-sticky pv-24 ph-8 d-flex ai-center jc-center"
+      className={cx(
+        "fx-4 pos-sticky pv-24 ph-8 d-flex ai-center jc-center",
+        className
+      )}
       css={css`
         top: 82px;
         height: calc(100vh - 150px);
@@ -37,7 +58,7 @@ const SideBarInfos = ({
             display: block;
             width: 100%;
             height: 100%;
-            background: url(${require("../../../images/bgSidebar.jpg")});
+            background: url(${require("../../../images/backgrounds/bgSidebar.jpg")});
             -webkit-mask-box-image: url(${require("../../../images/masks/text-banner.svg")})
               14 repeat;
             mask-border: url(${require("../../../images/masks/text-banner.svg")})
@@ -54,18 +75,20 @@ const SideBarInfos = ({
           <div className="ta-center">
             <picture className="pos-relative d-block w-100p h-300">
               <div className="pos-absolute bot-0 left-0 w-100 h-100 z-2">
-                <img
-                  src={`https://lukyvj.github.io/rdr2-naturalist-almanac/animals/icons/${data.thumbnailName}.png`}
+                <Image
+                  src={`${CDN_URL}${itemType}/icons/${data.thumbnailName}.png`}
                   className="w-100p h-100p va-middle obf-cover obp-center"
                   alt={`icon from rockstar®  for ${data.name}`}
+                  imageRef={iconRef}
                   loading="lazy"
                 />
               </div>
-              <img
-                src={`https://lukyvj.github.io/rdr2-naturalist-almanac/animals/photos/${data.photoName}.jpg`}
+              <Image
+                src={`${CDN_URL}${itemType}/photos/${photoName}.jpg`}
                 className="w-100p h-100p pos-absolute top-0 left-0 z-0 obf-cover obp-center"
                 alt={`screenshot from rockstar® for ${data.name}`}
                 loading="lazy"
+                imageRef={photoRef}
                 css={css`
                   -webkit-mask-box-image: url(${require("../../../images/masks/text-banner.svg")})
                     14 repeat;
@@ -162,7 +185,7 @@ const SideBarInfos = ({
                   <img
                     src={
                       data.mapLocation
-                        ? `https://lukyvj.github.io/rdr2-naturalist-almanac/maps/${
+                        ? `${CDN_URL}/maps/${
                             data.isLegendary === true
                               ? `legendary/${slugify(data.name)}.png`
                               : `${slugify(data.mapLocation)}.png`

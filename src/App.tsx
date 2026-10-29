@@ -12,10 +12,9 @@ import "./css/fragments.css";
 import "./css/App.css";
 import "./css/fonts.css";
 
-import Nav from "./components/Nav";
-
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
+import Credits from "./pages/Credits/Credits";
 import Search from "./pages/Search/Search";
 import Section from "./components/Section";
 
@@ -32,8 +31,6 @@ const App = () => {
       <Router>
         <Hero />
 
-        <Nav />
-
         <Switch>
           <Route exact path="/">
             <Section>
@@ -48,6 +45,11 @@ const App = () => {
           <Route path="/about">
             <Section>
               <About />
+            </Section>
+          </Route>
+          <Route path="/credits">
+            <Section>
+              <Credits />
             </Section>
           </Route>
         </Switch>

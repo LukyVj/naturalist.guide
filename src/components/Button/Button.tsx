@@ -4,7 +4,7 @@ import { css, jsx } from "@emotion/core";
 import cx from "classnames";
 
 interface ButtonProps {
-  label: string;
+  label: string | Number;
   onClick?: Function;
   href?: string;
   tag?: string;

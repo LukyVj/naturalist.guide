@@ -18,6 +18,7 @@ const config = {
   colors: {
     white: "#fff",
     black: "#000",
+    ground: "#1a1a1a",
     wood: "#966F33",
     "ebony-clay": "#242b43",
     lima: "#6fda11",
